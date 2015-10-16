@@ -1,0 +1,40 @@
+{
+  "SpotPrice": "0.06",
+  "InstanceCount": 1,
+  "Type": "persistent",
+  "LaunchSpecification": {
+    "ImageId": "ami-5189a661",
+    "KeyName": "ekm_oregon",
+    "UserData": "file://provision-host.sh",
+    "InstanceType": "m4.large",
+    "Placement": {
+      "AvailabilityZone": "us-west-2c"
+    },
+    "BlockDeviceMappings": [
+      {
+        "DeviceName": "xvda",
+        "Ebs": {
+          "VolumeSize": 30,
+          "DeleteOnTermination": true,
+          "VolumeType": "gp2",
+          "Encrypted": false
+        }
+      }
+    ],
+    "NetworkInterfaces": [
+      {
+        "DeviceIndex": 0,
+        "SubnetId": "subnet-b0e14fe9",
+        "AssociatePublicIpAddress": true,
+        "Groups": ["sg-82d349e6"]
+      }
+    ],
+    "IamInstanceProfile": {
+      "Arn": "arn:aws:iam::154840402446:instance-profile/Drumstick"
+    },
+    "EbsOptimized": true,
+    "Monitoring": {
+      "Enabled": false
+    }
+  }
+}
