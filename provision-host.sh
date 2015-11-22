@@ -1,13 +1,15 @@
 #!/bin/bash
 
-apt-get update
-apt-get install -y awscli
+# Only prerequisites: docker and curl. And the assumption that you're running on an EC2 instance. And that your name
+# is Eli Mallon and you're running on my AWS account, that's a big one too.
 
 # Set the host's SSH port to 2222
 cat /etc/ssh/sshd_config | sed s/"^Port 22$"/"Port 2222"/ > /etc/ssh/sshd_config_new
 mv /etc/ssh/sshd_config /etc/ssh/sshd_config_old
 mv /etc/ssh/sshd_config_new /etc/ssh/sshd_config
 service ssh restart
+
+instanceId=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 
 # Mount the EBS with my home directory on it
 export AWS_DEFAULT_REGION=us-west-2
