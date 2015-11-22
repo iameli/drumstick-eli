@@ -3,7 +3,7 @@
   "InstanceCount": 1,
   "Type": "persistent",
   "LaunchSpecification": {
-    "ImageId": "ami-5189a661",
+    "ImageId": "ami-ac0bea9f",
     "KeyName": "ekm_oregon",
     "UserData": "file://provision-host.sh",
     "InstanceType": "m4.large",

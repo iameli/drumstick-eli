@@ -32,6 +32,7 @@ aws ec2 associate-address \
 
 # Docker please.
 curl -sSL https://get.docker.com/ | sh
+service docker start
 
 # Fire up the real thing!
 cat <<EOF > /root/start.sh
