@@ -12,7 +12,7 @@
     },
     "BlockDeviceMappings": [
       {
-        "DeviceName": "xvda",
+        "DeviceName": "/dev/sda1",
         "Ebs": {
           "VolumeSize": 30,
           "DeleteOnTermination": true,
