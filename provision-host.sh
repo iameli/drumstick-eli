@@ -47,7 +47,6 @@ while true; do
     --name drumstick \
     --net host \
     -v /mnt/user:/root \
-    -v /usr/bin/docker:/usr/bin/docker \
     -v /run/docker.sock:/run/docker.sock \
     iameli/drumstick-eli
   sleep 1
