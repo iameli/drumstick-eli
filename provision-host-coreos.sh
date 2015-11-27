@@ -22,13 +22,13 @@ docker run --rm blendle/aws-cli ec2 attach-volume \
   --device /dev/xvdz \
   --region us-west-2
 
-mkdir -p /mnt/user
+mkdir -p /home/root
 
 while [ ! -e /dev/xvdz ]
 do
   sleep 1
 done
-mount /dev/xvdz /mnt/user
+mount /dev/xvdz /home/root
 
 # Gimmie my elastic IP
 docker run --rm blendle/aws-cli ec2 associate-address \
@@ -41,7 +41,7 @@ docker run \
   -d \
   --name drumstick \
   --net host \
-  -v /mnt/user:/root \
+  -v /home/root:/home/root \
   -v $(which docker):/usr/bin/docker \
   -v /run/docker.sock:/run/docker.sock \
   iameli/drumstick-eli
