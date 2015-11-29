@@ -3,6 +3,17 @@
 # Only prerequisites: docker and curl. And the assumption that you're running on an EC2 instance. And that your name
 # is Eli Mallon and you're running on my AWS account, that's a big one too.
 
+# Close STDOUT file descriptor
+exec 1<&-
+# Close STDERR FD
+exec 2<&-
+
+# Open STDOUT as $LOG_FILE file for read and write.
+exec 1<>/var/log/drumstick-eli.log
+
+# Redirect STDERR to STDOUT
+exec 2>&1
+
 # Set the host's SSH port to 2222
 cat /usr/lib/systemd/system/sshd.socket | \
   sed s/"^ListenStream=22$"/"ListenStream=2222"/ > \
@@ -42,6 +53,5 @@ docker run \
   --name drumstick \
   --net host \
   -v /home/root:/home/root \
-  -v $(which docker):/usr/bin/docker \
   -v /run/docker.sock:/run/docker.sock \
   iameli/drumstick-eli
