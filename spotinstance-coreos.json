@@ -1,5 +1,5 @@
 {
-  "SpotPrice": "0.06",
+  "SpotPrice": "0.10",
   "InstanceCount": 1,
   "Type": "persistent",
   "LaunchSpecification": {
@@ -8,7 +8,7 @@
     "UserData": "file://provision-host-coreos.sh",
     "InstanceType": "m4.large",
     "Placement": {
-      "AvailabilityZone": "us-west-2c"
+      "AvailabilityZone": "us-west-2b"
     },
     "BlockDeviceMappings": [
       {
@@ -24,7 +24,7 @@
     "NetworkInterfaces": [
       {
         "DeviceIndex": 0,
-        "SubnetId": "subnet-b0e14fe9",
+        "SubnetId": "subnet-10dca975",
         "AssociatePublicIpAddress": true,
         "Groups": ["sg-82d349e6"]
       }

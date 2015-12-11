@@ -28,7 +28,7 @@ instanceId=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 # Mount the EBS with my home directory on it
 # export AWS_DEFAULT_REGION=us-west-2
 docker run --rm blendle/aws-cli ec2 attach-volume \
-  --volume-id vol-58d929be \
+  --volume-id vol-fdf7300a \
   --instance-id $instanceId \
   --device /dev/xvdz \
   --region us-west-2
@@ -52,6 +52,7 @@ docker run \
   -d \
   --name drumstick \
   --net host \
+  --restart always \
   -v /home/root:/home/root \
   -v /run/docker.sock:/run/docker.sock \
   iameli/drumstick-eli
