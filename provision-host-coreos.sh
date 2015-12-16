@@ -14,6 +14,9 @@ exec 1<>/var/log/drumstick-eli.log
 # Redirect STDERR to STDOUT
 exec 2>&1
 
+# Stop auto-update. Don't do this in production, you whippersnappers.
+systemctl stop update-engine
+
 # Set the host's SSH port to 2222
 cat /usr/lib/systemd/system/sshd.socket | \
   sed s/"^ListenStream=22$"/"ListenStream=2222"/ > \
@@ -50,6 +53,7 @@ docker run --rm blendle/aws-cli ec2 associate-address \
 docker run \
   --privileged=true \
   -d \
+  --restart=always \
   --name drumstick \
   --net host \
   --restart always \
