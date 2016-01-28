@@ -1,12 +1,12 @@
 {
-  "SpotPrice": "0.10",
+  "SpotPrice": "0.30",
   "InstanceCount": 1,
   "Type": "persistent",
   "LaunchSpecification": {
-    "ImageId": "ami-46d2c227",
-    "KeyName": "ekm_oregon",
+    "ImageId": "ami-47e80c27",
+    "KeyName": "ekm_oregon_2016",
     "UserData": "file://provision-host-coreos.sh",
-    "InstanceType": "m4.large",
+    "InstanceType": "m3.xlarge",
     "Placement": {
       "AvailabilityZone": "us-west-2b"
     },

@@ -31,7 +31,7 @@ instanceId=$(curl http://169.254.169.254/latest/meta-data/instance-id)
 # Mount the EBS with my home directory on it
 # export AWS_DEFAULT_REGION=us-west-2
 docker run --rm blendle/aws-cli ec2 attach-volume \
-  --volume-id vol-fdf7300a \
+  --volume-id vol-8253c875 \
   --instance-id $instanceId \
   --device /dev/xvdz \
   --region us-west-2
