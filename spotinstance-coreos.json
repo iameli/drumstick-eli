@@ -3,7 +3,7 @@
   "InstanceCount": 1,
   "Type": "persistent",
   "LaunchSpecification": {
-    "ImageId": "ami-47e80c27",
+    "ImageId": "ami-2e88784e",
     "KeyName": "ekm_oregon_2016",
     "UserData": "file://provision-host-coreos.sh",
     "InstanceType": "c4.2xlarge",
