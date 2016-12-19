@@ -1,14 +1,14 @@
 {
-  "SpotPrice": "0.06",
+  "SpotPrice": "2.00",
   "InstanceCount": 1,
   "Type": "persistent",
   "LaunchSpecification": {
-    "ImageId": "ami-ac0bea9f",
-    "KeyName": "ekm_oregon",
+    "ImageId": "ami-b7a114d7",
+    "KeyName": "ekm_oregon_2016",
     "UserData": "file://provision-host.sh",
-    "InstanceType": "m4.large",
+    "InstanceType": "c4.2xlarge",
     "Placement": {
-      "AvailabilityZone": "us-west-2c"
+      "AvailabilityZone": "us-west-2b"
     },
     "BlockDeviceMappings": [
       {
@@ -24,7 +24,7 @@
     "NetworkInterfaces": [
       {
         "DeviceIndex": 0,
-        "SubnetId": "subnet-b0e14fe9",
+        "SubnetId": "subnet-10dca975",
         "AssociatePublicIpAddress": true,
         "Groups": ["sg-82d349e6"]
       }
