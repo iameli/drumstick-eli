@@ -55,6 +55,11 @@ aws ec2 associate-address \
   --allocation-id eipalloc-c54dfca0 \
   --instance-id `ec2metadata --instance-id`
 
+# Get ready to run a kubernetes cluster!
+mkdir -p /var/lib/kubelet
+mount --bind /var/lib/kubelet /var/lib/kubelet
+mount --make-shared /var/lib/kubelet
+
 # Fire up the real thing!
 cat <<EOF > /root/start.sh
 #!/bin/bash
