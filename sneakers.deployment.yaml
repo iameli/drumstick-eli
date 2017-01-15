@@ -29,5 +29,4 @@ spec:
             - name: home
               mountPath: /home/root
             - name: dockersock
-              hostPath:
-                path: /var/run/docker.sock
+              mountPath: /var/run/docker.sock
