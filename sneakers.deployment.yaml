@@ -11,6 +11,7 @@ spec:
       labels:
         app: sneakers
     spec:
+      hostNetwork: true
       volumes:
         - name: dockersock
           hostPath:
@@ -20,11 +21,6 @@ spec:
             path: /home/root
       containers:
         - name: "drumstick"
-          ports:
-            - name: ssh
-              containerPort: 22
-              hostPort: 22
-              protocol: TCP
           image: "iameli/drumstick-eli"
           imagePullPolicy: IfNotPresent
           securityContext:
