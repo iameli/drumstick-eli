@@ -6,7 +6,7 @@
     "ImageId": "ami-b7a114d7",
     "KeyName": "ekm_oregon_2016",
     "UserData": "file://provision-host.sh",
-    "InstanceType": "c4.2xlarge",
+    "InstanceType": "m3.medium",
     "Placement": {
       "AvailabilityZone": "us-west-2b"
     },
